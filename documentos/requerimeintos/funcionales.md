@@ -14,10 +14,10 @@ Son las características y funcionalidades del sistema del juego que debe cumpli
 
 6. El usuario tendra las posibilidades de entrenar o practicar con el juego para que se familiarice mas con su diaclecto.
 
-6. Debe haber diferentes niveles de dificultad para adaptarse a las habilidades del jugador.
+7. Debe haber diferentes niveles de dificultad para adaptarse a las habilidades del jugador.
 
-7. El juego debe tener un sistema de puntuación para registrar el rendimiento del jugador.
+8. El juego debe tener un sistema de puntuación para registrar el rendimiento del jugador.
 
-8. Generación de reportes estadisticos del juego.
+9. Generación de reportes estadisticos del juego.
 
  
