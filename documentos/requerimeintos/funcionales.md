@@ -5,7 +5,13 @@
 
 4. El ususario podra consultar ciertas navegaciones en a segunda pantalla del sistema como jugar , centro de ayuda y salir. 
 
-5. El usuario cuando de click en la opcion de jugar pasara a un menu con opicones de: jugar, entrenar, puntuacion, acerca de. 
+5. El usuario cuando de click en la opcion de jugar pasara a un menú con opicones de: jugar, entrenar, puntuacion, acerca de. 
 
-6. El usuario 
+6. El usuario tendra las posibilidades de entrenar o practicar con el juego para que se familiarice mas con su diaclecto podra pasar al siguiente nivel o podra regresar al menú pricipal. 
+
+7. El usuario cuando se sienta preparado y seguro. puede empezar con el juego donde contara con un temporizador y una puntuacion. 
+
+8. El usuario podrá observar su puntuacion de cada intento que realizo en el juego. 
+
+
  
