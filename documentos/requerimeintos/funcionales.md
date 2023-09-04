@@ -13,5 +13,6 @@
 
 8. El usuario podrá observar su puntuacion de cada intento que realizo en el juego. 
 
+9. El usuario podra salir del juego con el boton de salir
 
  
