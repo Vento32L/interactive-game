@@ -9,7 +9,7 @@ Son las características y funcionalidades del sistema del juego que debe cumpli
 3. El juego debe tener una interfaz intuitiva y fácil de usar.
 
 4. Debe haber efectos de sonido y música para mejorar la experiencia del juego.
-
+ 
 5. El ususario podra consultar ciertas navegaciones en a segunda pantalla del sistema como jugar , centro de ayuda y salir. 
 
 6. El usuario tendra las posibilidades de entrenar o practicar con el juego para que se familiarice mas con su diaclecto.
