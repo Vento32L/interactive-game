@@ -3,6 +3,7 @@
 Son las características y funcionalidades del sistema del juego que debe cumplir para satisfacer las necesidades del usuario. 
 
 1. El usuario al ingresar en el sistema podrá registrarse antes de iniciar sesión.
+gklgf
 
 2. El usuario al ingresar en el sistema podrá inciar sesión en el sistema utilizando el usuario y contraseña. 
 
