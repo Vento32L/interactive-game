@@ -1,0 +1,19 @@
+{
+  "name": "backend-interactivegame-nasayuwe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vento32L/Backend_InteractiveGame_NasaYuwe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vento32L/Backend_InteractiveGame_NasaYuwe/issues"
+  },
+  "homepage": "https://github.com/Vento32L/Backend_InteractiveGame_NasaYuwe#readme"
+}
