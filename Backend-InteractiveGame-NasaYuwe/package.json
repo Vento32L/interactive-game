@@ -8,12 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Vento32L/Backend_InteractiveGame_NasaYuwe.git"
+    "url": "git+https://github.com/Vento32L/interactive-game.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Vento32L/Backend_InteractiveGame_NasaYuwe/issues"
+    "url": "https://github.com/Vento32L/interactive-game/issues"
   },
-  "homepage": "https://github.com/Vento32L/Backend_InteractiveGame_NasaYuwe#readme"
+  "homepage": "https://github.com/Vento32L/interactive-game#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "sequelize": "^6.33.0"
+  }
 }
