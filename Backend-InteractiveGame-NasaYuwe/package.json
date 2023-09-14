@@ -1,0 +1,23 @@
+{
+  "name": "backend-interactivegame-nasayuwe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vento32L/interactive-game.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vento32L/interactive-game/issues"
+  },
+  "homepage": "https://github.com/Vento32L/interactive-game#readme",
+  "dependencies": {
+    "mysql": "^2.18.1",
+    "mysql2": "^3.6.1"
+  }
+}
