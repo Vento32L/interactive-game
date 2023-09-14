@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Vento32L/interactive-game#readme",
   "dependencies": {
+    "express": "^4.18.2",
     "mysql": "^2.18.1",
     "mysql2": "^3.6.1"
   }
