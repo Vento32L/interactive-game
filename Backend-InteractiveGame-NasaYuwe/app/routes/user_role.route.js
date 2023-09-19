@@ -1,11 +1,11 @@
 const express = require ('express')
 const route = require('express').Router()
 
-const {getUser_role/*, getOneUser_role, addUser_role*/}
- = require('../controllers/user.controller')
+const {getUser_roles, getOneUser_role/*, addUser_role*/}
+ = require('../controllers/user_role.controller')
 
-route.route('/user_role').get(getUser_role)
-//route.route('/user/:user_id').get(getOneUser)
+route.route('/user_roles').get(getUser_roles)
+route.route('/user/:user_ro_id').get(getOneUser_role)
 //route.route('/user').post(addUser)
 
 module.exports = route
