@@ -12,7 +12,7 @@ var Models = {
         }
     },
 
-    getUser: (data, callback) => {
+    getOneUser: (data, callback) => {
         console.log("el id: ", data)
         if(dbconnection){
             let sql = `select *from user where user_id = ${dbconnection.escape(data)}`

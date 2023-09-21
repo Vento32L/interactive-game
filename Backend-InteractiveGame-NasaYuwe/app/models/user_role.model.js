@@ -15,7 +15,7 @@ var Models = {
     getOneUser_role: (data, callback) => {
         console.log("el id: ", data)
         if (dbconnection){
-            let sql = 'select * from user_role where user_ro_id = ${dbconnection.escape(data)}'
+            let sql = `select * from user_role where user_ro_id = ${dbconnection.escape(data)}`
             dbconnection.query(sql, (error, rows) => { 
                 if(error) throw error
                 callback(rows)
@@ -25,7 +25,7 @@ var Models = {
 
     addUser_role: (data, callback) => {
         if(dbconnection){
-            let sql = 'insert into user_role (user_ro_description) values (${dbconnection.escape(data.user_ro_description)})'
+            let sql = `insert into user_role (user_ro_description) values (${dbconnection.escape(data.user_ro_description)})`
 
             dbconnection.query(sql, (error, rows) =>{
                 if(error) throw error

@@ -6,19 +6,35 @@ function getUsers(req, res){
         res.json(data)
     })
 }
-function getUser(req, res){
+function getOneUser(req, res){
     console.log("id: ", req, params)
     const {user_id} =req.params
-    Models.getUser(user_id, (data, error) =>{
+    Models.getOneUser(user_id, (data, error) =>{
+        res.json(data)
+    })
+}
+
+function addUser(req, res){
+    const {user_name, user_age, user_password, user_role_user_ro_id} = req.body
+    console.log(`usuario: ${user_name}, ${user_age}, ${user_password}, ${user_role_user_ro_id}`)
+    Models.addUser({user_name, user_age, user_password, user_role_user_ro_id}, (data, error) =>{
+        res.json(data)
+    })
+}
+
+function deleteUser(req, res){
+    const {user_id} = req.params
+    Models.deleteUser(user_id, (data, error) =>{
         res.json(data)
     })
 }
 
 module.exports = {
     getUsers,
-    getUser
-    /*addUser_role,
-    editUser,
-    deleteUser*/
+    getOneUser,
+    addUser,
+    deleteUser
+    /*editUser,
+    */
 
 }

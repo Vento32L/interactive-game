@@ -20,7 +20,7 @@ function getOneUser_role(req, res){
 function addUser_role(req, res){
     const {
         user_role_description} = req.body
-    console.log('user_role: ${user_role_description}')
+    console.log(`user_role: ${user_role_description}`)
     Models.getOneUser_role({user_role_description})
 }
 
