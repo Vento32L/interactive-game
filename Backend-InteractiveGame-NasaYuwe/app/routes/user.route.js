@@ -6,3 +6,5 @@ const {getUsers, getUser}
 
 route.route('/users').get(getUsers)
 route.route('/user').get(getUser)
+
+module.exports = route
