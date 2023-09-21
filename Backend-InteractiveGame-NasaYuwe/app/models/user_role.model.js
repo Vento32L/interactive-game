@@ -16,7 +16,6 @@ var Models = {
         console.log("el id: ", data)
         if (dbconnection){
             let sql = 'select * from user_role where user_ro_id = ${dbconnection.escape(data)}'
-$
             dbconnection.query(sql, (error, rows) => { 
                 if(error) throw error
                 callback(rows)

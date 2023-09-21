@@ -6,11 +6,18 @@ function getUsers(req, res){
         res.json(data)
     })
 }
+function getUser(req, res){
+    console.log("id: ", req, params)
+    const {user_id} =req.params
+    Models.getUser(user_id, (data, error) =>{
+        res.json(data)
+    })
+}
 
 module.exports = {
     getUsers,
-    /*getOneUser_role,
-    addUser_role,
+    getUser
+    /*addUser_role,
     editUser,
     deleteUser*/
 
