@@ -6,6 +6,6 @@ const {getUser_roles, getOneUser_role/*, addUser_role*/}
 
 route.route('/user_roles').get(getUser_roles)
 route.route('/user/:user_ro_id').get(getOneUser_role)
-//route.route('/user').post(addUser)
+route.route('/user_role').post(addUser)
 
 module.exports = route
