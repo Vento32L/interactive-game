@@ -1,7 +1,8 @@
 const express = require('express')
 const route = require('express').Router()
 
-const {getUser}
+const {getUsers, getUser}
  = require('../controllers/user.controller')
 
-route.route('/user')
+route.route('/users').get(getUsers)
+route.route('/user').get(getUser)
