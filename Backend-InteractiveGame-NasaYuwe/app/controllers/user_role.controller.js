@@ -26,7 +26,7 @@ function addUser_role(req, res){
 module.exports = {
     getUser_roles,
     getOneUser_role,
-    addUser_role,
+    addUser_role
     /*editUser,
     deleteUser*/
 

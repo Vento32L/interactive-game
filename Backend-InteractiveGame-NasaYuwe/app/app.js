@@ -12,5 +12,6 @@ app.use(express.json());
 //routes
 app.use(require('./routes/user_role.route'))
 app.use(require('./routes/user.route'))
+app.use(require('./routes/game_type.route'))
 
 module.exports = app
