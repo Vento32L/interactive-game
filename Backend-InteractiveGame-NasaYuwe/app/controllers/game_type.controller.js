@@ -11,14 +11,14 @@ function getGame_Types(req, res){
 
 function getOneGame_Type(req, res){
     console.log("id: ", req, params)
-    const {Game_ty_id} =req.params
+    const {game_ty_id} =req.params
     Models.getOneGame_Type(game_ty_id, (data, error) => {
         res.json(data)
     })
 }
 
 function addGame_Type(req, res){
-    const {Game_ty_description} = req.body
+    const {game_ty_description} = req.body
     console.log(`Game_Type: ${game_ty_description}`)
     Models.addGame_Type({game_ty_description})
 }
