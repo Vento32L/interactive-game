@@ -1,4 +1,4 @@
-const Models = require ('../models/user_role.model')
+const Models = require ('../models/user.model')
 
 function getUsers(req, res){
     Models.get ((data, error) => {

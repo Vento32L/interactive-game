@@ -1,4 +1,4 @@
-const Models = require('../models/user_role.model')
+const Models = require('../models/game.models')
 //const dbconnection = require('../../database/dbconnection')
 
 function getGames(req, res){
