@@ -1,9 +1,9 @@
 const dbconnection = require('../../database/dbconnection')
 
 var Models = {
-    getGame_Types: (callback) => {
+    getGames: (callback) => {
         if(dbconnection){
-            let sql = `select * from game_type`
+            let sql = `select * from game`
 
             dbconnection.query(sql, (error, rows) => {
                 if(error) throw error
@@ -12,10 +12,10 @@ var Models = {
         }
     },
 
-    getOneGame_Type: (data, callback) => {
+    getOneGame: (data, callback) => {
         console.log("el id: ", data)
         if(dbconnection){
-            let sql = `select *from game_type where game_ty_id = ${dbconnection.escape(data)}`
+            let sql = `select *from game where game_id = ${dbconnection.escape(data)}`
             dbconnection.query(sql, (error, rows) => {
                 if(error) throw error
                 callback(rows)
@@ -23,13 +23,17 @@ var Models = {
         }
     },
 
-    addGame_Type: (data, callback) => {
+    addGame: (data, callback) => {
         if(dbconnection){
-            let sql = `insert into game_type (game_ty_description) values (${dbconnection.escape(data.game_ty_description)})`
+            let sql = `insert into game (game_punctuation, gmae_time, game_level, user_user_id) values (${dbconnection.escape(data.game_punctuation)}, 
+            ${dbconnection.escape(data.game_punctuation)},
+            ${dbconnection.escape(data.game_time)},
+            ${dbconnection.escape(data.game_level)},
+            ${dbconnection.escape(data.user_user_id)})`
 
             dbconnection.query(sql, (error, rows) =>{
                 if(error) throw error
-                callback({message : 'Tipo de juego creado satisfactoriamente'})
+                callback({message : 'Juego creado satisfactoriamente'})
             })
         }
     },
