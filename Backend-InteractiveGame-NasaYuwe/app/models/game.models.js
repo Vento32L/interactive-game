@@ -36,16 +36,6 @@ var Models = {
                 callback({message : 'Juego creado satisfactoriamente'})
             })
         }
-    },
-    
-    deleteUser: (data, callback) =>{
-        if(dbconnection){
-            let sql = `delete from user where user_id = ${dbconnection.escape(data)}`
-            dbconnection.query(sql, (error, rows) =>{
-                if(error) throw error
-                callback({message: 'usuario eliminado'})
-            })  
-        }
     }
 }
 
