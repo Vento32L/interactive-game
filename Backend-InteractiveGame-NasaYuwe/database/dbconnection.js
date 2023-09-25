@@ -17,5 +17,3 @@ myConn.connect((err)=>{
 })
 
 module.exports = myConn
-
-myConn.end()
