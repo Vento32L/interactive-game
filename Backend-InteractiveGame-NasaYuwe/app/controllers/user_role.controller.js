@@ -2,7 +2,7 @@ const Models = require('../models/user_role.model')
 //const dbconnection = require('../../database/dbconnection')
 
 function getUser_roles(req, res){
-    Models.getUser_roles ((data, error) => {
+    Models.getUser_roles((data, error) => {
 
         res.json(data)
 

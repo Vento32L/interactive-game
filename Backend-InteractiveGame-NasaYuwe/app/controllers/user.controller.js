@@ -1,7 +1,7 @@
 const Models = require ('../models/user.model')
 
 function getUsers(req, res){
-    Models.get ((data, error) => {
+    Models.getUsers((data, error) => {
 
         res.json(data)
     })

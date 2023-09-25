@@ -1,7 +1,7 @@
 const Models = require ('../models/words.model')
 
 function getWords(req, res){
-    Models.get ((data, error) => {
+    Models.getWords((data, error) => {
 
         res.json(data)
     })

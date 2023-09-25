@@ -2,7 +2,7 @@ const Models = require('../models/game.model')
 //const dbconnection = require('../../database/dbconnection')
 
 function getGames(req, res){
-    Models.getGames ((data, error) => {
+    Models.getGames((data, error) => {
 
         res.json(data)
 

@@ -1,12 +1,12 @@
 const Models = require ('../models/words_has_game.model')
 
 function getWords_has_Game(req, res){
-    Models.get ((data, error) => {
+    Models.getWords_has_Game((data, error) => {
 
         res.json(data)
     })
 }
 
 module.exports = {
-    getWords_has_Game,
+    getWords_has_Game
 }
