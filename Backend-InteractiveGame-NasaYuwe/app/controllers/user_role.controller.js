@@ -18,9 +18,9 @@ function getOneUser_role(req, res){
 }
 
 function addUser_role(req, res){
-    const {user_role_description} = req.body
-    console.log(`user_role: ${user_role_description}`)
-    Models.addUser_role({user_role_description})
+    const {user_ro_description} = req.body
+    console.log(`user_role: ${user_ro_description}`)
+    Models.addUser_role({user_ro_description})
 }
 
 module.exports = {

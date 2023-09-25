@@ -16,8 +16,8 @@ function getOneWords(req, res){
 
 function addWords(req, res){
     const {word_description, word_sound, word_play, word_spanish_meaning, word_graph} = req.body
-    console.log(`words: ${word_description}, ${word_sound}, ${word_play, word_spanish_meaning,word_graph}`)
-    Models.addWords({word_description, word_sound, word_play, word_spanish_meaning,word_graph}, (data, error) =>{
+    console.log(`words: ${word_description}, ${word_sound}, ${word_play, word_spanish_meaning, word_graph}`)
+    Models.addWords({word_description, word_sound, word_play, word_spanish_meaning, word_graph}, (data, error) =>{
         res.json(data)
     })
 }

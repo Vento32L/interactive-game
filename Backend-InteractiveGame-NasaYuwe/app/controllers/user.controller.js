@@ -6,6 +6,7 @@ function getUsers(req, res){
         res.json(data)
     })
 }
+
 function getOneUser(req, res){
     console.log("id: ", req, params)
     const {user_id} =req.params
@@ -16,7 +17,7 @@ function getOneUser(req, res){
 
 function addUser(req, res){
     const {user_name, user_age, user_password, user_role_user_ro_id} = req.body
-    console.log(`usuario: ${user_name}, ${user_age}, ${user_password}, ${user_role_user_ro_id}`)
+    console.log(`user: ${user_name}, ${user_age}, ${user_password}, ${user_role_user_ro_id}`)
     Models.addUser({user_name, user_age, user_password, user_role_user_ro_id}, (data, error) =>{
         res.json(data)
     })

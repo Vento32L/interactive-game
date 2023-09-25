@@ -34,10 +34,5 @@ var Models = {
         }
     }
 }
-/*connection.query('SELECT * from user', (err, rows)=>{
-    if(err) throw err
-    console.log('los datos solicitados son: ')
-    console.log (rows)
-})*/
 
 module.exports = Models

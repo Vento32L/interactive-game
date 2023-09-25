@@ -19,7 +19,7 @@ function getOneGame_Type(req, res){
 
 function addGame_Type(req, res){
     const {game_ty_description} = req.body
-    console.log(`Game_Type: ${game_ty_description}`)
+    console.log(`game_type: ${game_ty_description}`)
     Models.addGame_Type({game_ty_description})
 }
 
