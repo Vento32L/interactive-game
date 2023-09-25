@@ -28,12 +28,12 @@ var Models = {
             let sql = `insert into words (word_description, word_sound, word_play, word_spanish_meaning, word_graph) values (${dbconnection.escape(data.word_description)},
             ${dbconnection.escape(data.word_sound)},
             ${dbconnection.escape(data.word_play)},
-            ${dbconnection.escape(data.word_spanish)},
+            ${dbconnection.escape(data.word_spanish_meaning)},
             ${dbconnection.escape(data.word_graph)})`
 
             dbconnection.query(sql, (error, rows) =>{
                 if(error) throw error
-                callback({message : 'Usuario creado satisfactoriamente'})
+                callback({message : 'Palabras creadas satisfactoriamente'})
             })
         }
     }
