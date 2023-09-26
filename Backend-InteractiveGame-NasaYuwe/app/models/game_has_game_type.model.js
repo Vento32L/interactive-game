@@ -1,9 +1,9 @@
 const dbconnection = require('../../database/dbconnection')
 
 var Models = {
-    getGame_Type_has_Game: (callback) => {
+    getGame_has_Game_Type: (callback) => {
         if(dbconnection){
-            let sql = `select * from game_type_has_game`
+            let sql = `select * from game_has_game_type`
 
             dbconnection.query(sql, (error, rows) => {
                 if(error) throw error

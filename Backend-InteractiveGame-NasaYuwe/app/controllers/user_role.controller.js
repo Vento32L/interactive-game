@@ -5,7 +5,6 @@ function getUser_roles(req, res){
     Models.getUser_roles((data, error) => {
 
         res.json(data)
-
     } ) 
 }
 
