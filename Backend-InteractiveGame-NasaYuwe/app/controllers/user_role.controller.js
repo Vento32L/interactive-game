@@ -10,7 +10,7 @@ function getUser_roles(req, res){
 }
 
 function getOneUser_role(req, res){
-    console.log("id: ", req, params)
+    console.log("user_role_id: ", req, params)
     const {user_ro_id} =req.params
     Models.getOneUser_role(user_ro_id, (data, error) => {
         res.json(data)
