@@ -14,7 +14,7 @@ app.use(require('./routes/user_role.route'))
 app.use(require('./routes/user.route'))
 app.use(require('./routes/game_type.route'))
 app.use(require('./routes/game.route'))
-//app.use(require('./routes/game_type_has_game.route'))
+app.use(require('./routes/game_type_has_game.route'))
 app.use(require('./routes/words.route'))
 app.use(require('./routes/words_has_game.route'))
 
