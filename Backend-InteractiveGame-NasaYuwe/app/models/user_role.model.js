@@ -32,7 +32,7 @@ var Models = {
                 callback({message : 'Usuario rol creado satisfactoriamente'})
             })
         }
-    }
+    },
 }
 
 module.exports = Models
