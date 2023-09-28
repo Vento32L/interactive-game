@@ -1,4 +1,4 @@
-const dbconnection = require('../../database/dbconnection');
+const dbconnection = require('../../database/dbconnection')
 
 var Models = {
     getUser_roles: (callback) => {
@@ -7,7 +7,7 @@ var Models = {
 
             dbconnection.query(sql, (error, rows) => {
                 if(error) throw error
-                callback(rows);
+                callback(rows)
             })
         }
     },
