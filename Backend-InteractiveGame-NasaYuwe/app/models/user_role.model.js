@@ -32,7 +32,7 @@ var Models = {
                     console.error('Error al insertar el usuario rol', error)
                     return callback({ error: 'No se puedo crear el usuario rol'})
                 }
-                callback({message : 'Usuario rol creado satisfactoriamente'})
+                return callback({message : 'Usuario rol creado satisfactoriamente'})
             })
         } else {
             console.error('La conexión a la base de datos no está disponible')
