@@ -28,14 +28,11 @@ var Models = {
             let sql = `insert into user_role (user_ro_description) values (${dbconnection.escape(data.user_ro_description)})`
 
             dbconnection.query(sql, (error, rows) =>{
-                if(error) {
-                    console.error('Error al insertar el usuario rol', error)
-                    return callback({ error: 'No se puedo crear el usuario rol'})
-                }
-                return callback({message : 'Usuario rol creado satisfactoriamente'})
+                if(error) throw error
+                callback({message : 'Usuario rol creado satisfactoriamente'})
+                //callback();
+                //console.log('Usuario rol creado satisfactoriamente')
             })
-        } else {
-            console.error('La conexión a la base de datos no está disponible')
         }
     }
 }
