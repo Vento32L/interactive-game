@@ -1,5 +1,6 @@
 const connection = require('../../database/connection')
 
+
 var Models = {
     getGames: (callback) => {
         if(connection){
@@ -24,6 +25,7 @@ var Models = {
     },
 
     addGame: (data, callback) => {
+        data.game_time = new Date();
         if(connection){
             let sql = `insert into game (game_punctuation, gmae_time, game_level, user_user_id) values (${connection.escape(data.game_punctuation)},
             ${connection.escape(data.game_time)},
