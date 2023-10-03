@@ -1,11 +1,11 @@
-const dbconnection = require('../../database/connection')
+const connection = require('../../database/connection')
 
 var Models = {
     getUsers: (callback) => {
-        if(dbconnection){
+        if(connection){
             let sql = `select * from user`
 
-            dbconnection.query(sql, (error, rows) => {
+            connection.query(sql, (error, rows) => {
                 if(error) throw error
                 callback(rows);
             })
@@ -14,9 +14,9 @@ var Models = {
 
     getOneUser: (data, callback) => {
         console.log("el id: ", data)
-        if(dbconnection){
-            let sql = `select *from user where user_id = ${dbconnection.escape(data)}`
-            dbconnection.query(sql, (error, rows) => {
+        if(connection){
+            let sql = `select *from user where user_id = ${connection.escape(data)}`
+            connection.query(sql, (error, rows) => {
                 if(error) throw error
                 callback(rows)
             })
@@ -24,13 +24,13 @@ var Models = {
     },
 
     addUser: (data, callback) => {
-        if(dbconnection){
-            let sql = `insert into user (user_name, user_age, user_password, user_role_user_ro_id) values (${dbconnection.escape(data.user_name)},
-            ${dbconnection.escape(data.user_age)},
-            ${dbconnection.escape(data.user_password)},
-            ${dbconnection.escape(data.user_role_user_ro_id)})`
+        if(connection){
+            let sql = `insert into user (user_name, user_age, user_password, user_role_user_ro_id) values (${connection.escape(data.user_name)},
+            ${connection.escape(data.user_age)},
+            ${connection.escape(data.user_password)},
+            ${connection.escape(data.user_role_user_ro_id)})`
 
-            dbconnection.query(sql, (error, rows) =>{
+            connection.query(sql, (error, rows) => {
                 if(error) throw error
                 callback({message : 'Usuario creado satisfactoriamente'})
             })
@@ -38,9 +38,9 @@ var Models = {
     },
     
     deleteUser: (data, callback) =>{
-        if(dbconnection){
-            let sql = `delete from user where user_id = ${dbconnection.escape(data)}`
-            dbconnection.query(sql, (error, rows) =>{
+        if(connection){
+            let sql = `delete from user where user_id = ${connection.escape(data)}`
+            connection.query(sql, (error, rows) =>{
                 if(error) throw error
                 callback({message: 'usuario eliminado'})
             })  

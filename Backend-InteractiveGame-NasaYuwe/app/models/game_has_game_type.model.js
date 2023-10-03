@@ -1,11 +1,11 @@
-const dbconnection = require('../../database/connection')
+const connection = require('../../database/connection')
 
 var Models = {
     getGame_has_Game_Type: (callback) => {
-        if(dbconnection){
+        if(connection){
             let sql = `select * from game_has_game_type`
 
-            dbconnection.query(sql, (error, rows) => {
+            connection.query(sql, (error, rows) => {
                 if(error) throw error
                 callback(rows);
             })

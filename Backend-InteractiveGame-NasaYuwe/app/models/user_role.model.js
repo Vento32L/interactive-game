@@ -34,6 +34,16 @@ var Models = {
                 //console.log('Usuario rol creado satisfactoriamente')
             })
         }
+    },
+
+    deleteUser_role: (data, callback) =>{
+        if(connection){
+            let sql = `delete from user_role where user_ro_id = ${connection.escape(data)}`
+            connection.query(sql, (error, rows) =>{
+                if(error) throw error
+                callback({message: 'usuario rol eliminado'})
+            })  
+        }
     }
 }
 

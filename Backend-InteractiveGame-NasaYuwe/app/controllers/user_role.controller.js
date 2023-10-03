@@ -1,5 +1,5 @@
 const Models = require('../models/user_role.model')
-const connection = require('../../database/connection')
+//const connection = require('../../database/connection')
 
 function getUser_roles(req, res){
     Models.getUser_roles((data, error) => {
@@ -24,11 +24,18 @@ function addUser_role(req, res){
     })
 }
 
+function deleteUser_role(req, res){
+    const {user_ro_id} = req.params
+    Models.deleteUser_role(user_ro_id, (data, error) =>{
+        res.json(data)
+    })
+}
+
 module.exports = {
     getUser_roles,
     getOneUser_role,
-    addUser_role
-    /*editUser,
-    deleteUser*/
+    addUser_role,
+    //editUser,
+    deleteUser_role
 
 }

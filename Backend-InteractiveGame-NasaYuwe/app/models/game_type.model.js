@@ -1,11 +1,11 @@
-const dbconnection = require('../../database/connection')
+const connection = require('../../database/connection')
 
 var Models = {
     getGame_Types: (callback) => {
-        if(dbconnection){
+        if(connection){
             let sql = `select * from game_type`
 
-            dbconnection.query(sql, (error, rows) => {
+            connection.query(sql, (error, rows) => {
                 if(error) throw error
                 callback(rows);
             })
@@ -14,9 +14,9 @@ var Models = {
 
     getOneGame_Type: (data, callback) => {
         console.log("el id: ", data)
-        if(dbconnection){
-            let sql = `select *from game_type where game_ty_id = ${dbconnection.escape(data)}`
-            dbconnection.query(sql, (error, rows) => {
+        if(connection){
+            let sql = `select *from game_type where game_ty_id = ${connection.escape(data)}`
+            connection.query(sql, (error, rows) => {
                 if(error) throw error
                 callback(rows)
             })
@@ -24,10 +24,10 @@ var Models = {
     },
 
     addGame_Type: (data, callback) => {
-        if(dbconnection){
-            let sql = `insert into game_type (game_ty_description) values (${dbconnection.escape(data.game_ty_description)})`
+        if(connection){
+            let sql = `insert into game_type (game_ty_description) values (${connection.escape(data.game_ty_description)})`
 
-            dbconnection.query(sql, (error, rows) =>{
+            connection.query(sql, (error, rows) =>{
                 if(error) throw error
                 callback({message : 'Tipo de juego creado satisfactoriamente'})
             })
