@@ -27,7 +27,7 @@ var Models = {
     addGame: (data, callback) => {
         data.game_time = new Date();
         if(connection){
-            let sql = `insert into game (game_punctuation, gmae_time, game_level, user_user_id) values (${connection.escape(data.game_punctuation)},
+            let sql = `insert into game (game_punctuation, game_time, game_level, user_user_id) values (${connection.escape(data.game_punctuation)},
             ${connection.escape(data.game_time)},
             ${connection.escape(data.game_level)},
             ${connection.escape(data.user_user_id)})`
