@@ -1,11 +1,11 @@
-const dbconnection = require('../../database/dbconnection')
+const connection = require('../../database/connection')
 
 var Models = {
     getUser_roles: (callback) => {
-        if(dbconnection) {
+        if(connection) {
             let sql = `select * from user_role`
 
-            dbconnection.query(sql, (error, rows) => {
+            connection.query(sql, (error, rows) => {
                 if(error) throw error
                 callback(rows)
             })
@@ -14,9 +14,9 @@ var Models = {
 
     getOneUser_role: (data, callback) => {
         console.log("el id: ", data)
-        if (dbconnection){
-            let sql = `select * from user_role where user_ro_id = ${dbconnection.escape(data)}`
-            dbconnection.query(sql, (error, rows) => { 
+        if (connection){
+            let sql = `select * from user_role where user_ro_id = ${connection.escape(data)}`
+            connection.query(sql, (error, rows) => { 
                 if(error) throw error
                 callback(rows)
             })
@@ -24,10 +24,10 @@ var Models = {
     },
 
     addUser_role: (data, callback) => {
-        if(dbconnection){
-            let sql = `insert into user_role (user_ro_description) values (${dbconnection.escape(data.user_ro_description)})`
+        if(connection){
+            let sql = `insert into user_role (user_ro_description) values (${connection.escape(data.user_ro_description)})`
 
-            dbconnection.query(sql, (error, rows) =>{
+            connection.query(sql, (error, rows) =>{
                 if(error) throw error
                 callback({message : 'Usuario rol creado satisfactoriamente'})
                 //callback();

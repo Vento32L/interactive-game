@@ -1,4 +1,4 @@
-const dbconnection = require('../../database/dbconnection')
+const dbconnection = require('../../database/connection')
 
 var Models = {
     getGames: (callback) => {
