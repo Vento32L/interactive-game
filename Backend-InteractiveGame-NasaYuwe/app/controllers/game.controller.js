@@ -20,7 +20,9 @@ function getOneGame(req, res){
 function addGame(req, res){
     const {game_punctuation, game_time, game_level, user_user_id} = req.body
     console.log(`game: ${game_punctuation}, ${game_time}, ${game_level}, ${user_user_id}`)
-    Models.addGame({game_punctuation, game_time, game_level, user_user_id})
+    Models.addGame({game_punctuation, game_time, game_level, user_user_id}, (data, error) => {
+        res.json(data)
+    })
 }
 
 module.exports = {
