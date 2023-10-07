@@ -4,8 +4,8 @@ import validation from'./loginValidation'
 
 function Login() {
     const [values, setValues] = useState({
-        alias: '',
-        password: ''
+        user_name: '',
+        user_password: ''
     })
 
     const [errors, setErrors] = useState({})
@@ -24,16 +24,16 @@ function Login() {
             <h2>Sing-In</h2>
             <form action="" onSubmit={handleSubmit}>
                 <div className='mb-3'>
-                    <label htmlFor="alias"><strong>Alias</strong></label>
-                    <input type="alias" placeholder='Enter Alias' name='alias'
+                    <label htmlFor="user_name"><strong>Alias</strong></label>
+                    <input type="alias" placeholder='Enter Alias' name='user_name'
                     onChange={handleInput} className='form-control rounded-0'/>
-                    {errors.alias && <span className='text-danger'> {errors.alias}</span>}
+                    {errors.alias && <span className='text-danger'> {errors.user_name}</span>}
                 </div>
                 <div className='mb-3'>
-                    <label htmlFor="password"><strong>Contraseña</strong></label>
-                    <input type="password" placeholder='Enter Contraseña' name='password'
+                    <label htmlFor="user_password"><strong>Contraseña</strong></label>
+                    <input type="password" placeholder='Enter Contraseña' name='user_password'
                     onChange={handleInput} className='form-control rounded-0'/>
-                    {errors.password && <span className='text-danger'> {errors.password}</span>}
+                    {errors.password && <span className='text-danger'> {errors.user_password}</span>}
                 </div>
                 <button type='submit' className='btn btn-success w-100 rounded-0'> Log in</button>
                 <p>Si no tiene una cuenta registrate</p>
