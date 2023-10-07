@@ -6,7 +6,8 @@ function Signup() {
     const [values, setValues] = useState({
         user_name: '',
         user_age: '',
-        user_password: ''
+        user_password: '',
+        user_role_user_ro_id: ''
     })
 
     const [errors, setErrors] = useState({})
@@ -17,6 +18,9 @@ function Signup() {
     const handleSubmit =(event)=>{
         event.preventDefault();
         setErrors(validation(values));
+        if(errors.user_name === "" && errors.user_age === "" && errors.user_role_user_ro_id ==="" && errors.user_password){
+
+        }
     }
 
   return (
@@ -35,6 +39,12 @@ function Signup() {
                 <input type="text" placeholder='Enter Edad' name='user_age'
                 onChange={handleInput} className='form-control rounded-0'/>
                 {errors.edad && <span className='text-danger'> {errors.user_age}</span>}
+            </div>
+            <div className='mb-3'>
+                <label htmlFor="user_role_user_ro_id"><strong>Rol</strong></label>
+                <input type="text" placeholder='Enter Rol' name='user_role_user_ro_id'
+                onChange={handleInput} className='form-control rounded-0'/>
+                {errors.edad && <span className='text-danger'> {errors.user_role_user_ro_id}</span>}
             </div>
             <div className='mb-3'>
                 <label htmlFor="user_password"><strong>Contraseña</strong></label>

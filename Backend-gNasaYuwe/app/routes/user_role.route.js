@@ -2,6 +2,8 @@ const express = require ('express')
 
 const route = require('express').Router()
 
+//const {user_role} = require('../controllers/user_role.controller')
+
 const {getUser_roles, getOneUser_role, addUser_role, deleteUser_role}
  = require('../controllers/user_role.controller')
 

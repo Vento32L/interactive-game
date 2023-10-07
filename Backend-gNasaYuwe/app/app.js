@@ -1,5 +1,4 @@
 const express = require('express');
-const morgan = require ('morgan')
 
 //Initialitions
 const app = express();
@@ -7,7 +6,6 @@ const app = express();
 //Setting
 app.set('port', process.env.PORT || 3000);
 
-app.use(morgan('dev'));
 
 //middlewares
 app.use(express.urlencoded({extended: false}));

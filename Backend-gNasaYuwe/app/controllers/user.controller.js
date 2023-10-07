@@ -1,5 +1,7 @@
 const Models = require ('../models/user.model')
 
+const getOneUser_role =require ('../controllers/user_role.controller')
+
 function getUsers(req, res){
     Models.getUsers((data, error) => {
 
@@ -24,7 +26,8 @@ function addUser(req, res){
 }
 
 function deleteUser(req, res){
-    const {user_id} = req.params
+    console.log("user_id: ", req, params)
+    //const {user_id} = req.params
     Models.deleteUser(user_id, (data, error) =>{
         res.json(data)
     })
