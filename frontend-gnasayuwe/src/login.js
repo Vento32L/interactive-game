@@ -26,13 +26,13 @@ function Login() {
                 <div className='mb-3'>
                     <label htmlFor="user_name"><strong>Alias</strong></label>
                     <input type="alias" placeholder='Enter Alias' name='user_name'
-                    onChange={handleInput} className='form-control rounded-0'/>
+                    onChange={handleInput} required className='form-control rounded-0'/>
                     {errors.alias && <span className='text-danger'> {errors.user_name}</span>}
                 </div>
                 <div className='mb-3'>
                     <label htmlFor="user_password"><strong>Contraseña</strong></label>
                     <input type="password" placeholder='Enter Contraseña' name='user_password'
-                    onChange={handleInput} className='form-control rounded-0'/>
+                    onChange={handleInput} required className='form-control rounded-0'/>
                     {errors.password && <span className='text-danger'> {errors.user_password}</span>}
                 </div>
                 <button type='submit' className='btn btn-success w-100 rounded-0'> Log in</button>
@@ -45,3 +45,58 @@ function Login() {
 }
 
 export default Login
+
+
+/*import React, { useState } from 'react';
+
+const Login = () => {
+  const [formData, setFormData] = useState({
+    username: '',
+    password: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Aquí puedes enviar los datos al backend para la autenticación
+    console.log('Datos de inicio de sesión:', formData);
+  };
+
+  return (
+    <div>
+      <h2>Iniciar Sesión</h2>
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="username">Usuario</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            value={formData.username}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="password">Contraseña</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <button type="submit">Iniciar Sesión</button>
+      </form>
+    </div>
+  );
+};
+
+export default Login;*/
+
