@@ -10,9 +10,13 @@ function getGames(req, res){
 }
 
 function getOneGame(req, res){
-    console.log("id: ", req, params)
-    const {game_id} =req.params
-    Models.getOneGame(game_id, (data, error) => {
+    console.log("id: ", req.params.game_id)
+    const gameId =req.params.game_id
+    Models.getOneGame(gameId, (data, error) => {
+        if(error){
+            res.status(500).json({ error: 'Error al obtener el juego' });
+            return;
+        }
         res.json(data)
     })
 }

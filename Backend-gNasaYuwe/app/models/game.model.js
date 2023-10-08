@@ -13,11 +13,11 @@ var Models = {
         }
     },
 
-    getOneGame: (data, callback) => {
-        console.log("el id: ", data)
+    getOneGame: (gameId, callback) => {
+        console.log("el id: ", gameId)
         if(connection){
-            let sql = `select *from game where game_id = ${connection.escape(data)}`
-            connection.query(sql, (error, rows) => {
+            let sql = `select *from game where game_id = ?`
+            connection.query(sql, [gameId], (error, rows) => {
                 if(error) throw error
                 callback(rows)
             })

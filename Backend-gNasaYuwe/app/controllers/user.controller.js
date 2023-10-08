@@ -45,7 +45,5 @@ module.exports = {
     getOneUser,
     addUser,
     deleteUser
-    /*editUser,
-    */
 
 }
