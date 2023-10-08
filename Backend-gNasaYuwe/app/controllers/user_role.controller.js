@@ -9,9 +9,13 @@ function getUser_roles(req, res){
 }
 
 function getOneUser_role(req, res){
-    console.log("id: ", req, params)
-    const {user_ro_id} =req.params
-    Models.getOneUser_role({user_ro_id}, (data, error) => {
+    console.log("id: ", req.params.user_ro_id)
+    const userRoleId =req.params.user_ro_id
+    Models.getOneUser_role(userRoleId, (data, error) => {
+        if(error){
+            res.status(500).json({ error: 'Error al obtener el rol usuario' });
+            return;
+        }
         res.json(data)
     })
 }
@@ -25,8 +29,13 @@ function addUser_role(req, res){
 }
 
 function deleteUser_role(req, res){
-    const {user_ro_id} = req.params
-    Models.deleteUser_role(user_ro_id, (data, error) =>{
+    console.log("id: ", req.params.user_ro_id)
+    const userRoleId = req.params.user_ro_id
+    Models.deleteUser_role(userRoleId, (data, error) =>{
+        if (error) {
+            res.status(500).json({ error: 'Error al eliminar el rol usuario' });
+            return;
+          }
         res.json(data)
     })
 }

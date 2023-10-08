@@ -12,11 +12,11 @@ var Models = {
         }
     },
 
-    getOneUser_role: (data, callback) => {
-        console.log("el id: ", data)
+    getOneUser_role: (userRoleId, callback) => {
+        console.log("id: ", userRoleId)
         if (connection){
-            let sql = `select * from user_role where user_ro_id = ${connection.escape(data)}`
-            connection.query(sql, (error, rows) => { 
+            let sql = `select * from user_role where user_ro_id = ?`
+            connection.query(sql, [userRoleId], (error, rows) => { 
                 if(error) throw error
                 callback(rows)
             })
@@ -36,10 +36,10 @@ var Models = {
         }
     },
 
-    deleteUser_role: (data, callback) =>{
+    deleteUser_role: (userRoleId, callback) =>{
         if(connection){
-            let sql = `delete from user_role where user_ro_id = ${connection.escape(data)}`
-            connection.query(sql, (error, rows) =>{
+            let sql = `delete from user_role where user_ro_id = ?`
+            connection.query(sql, [userRoleId], (error, rows) =>{
                 if(error) throw error
                 callback({message: 'usuario rol eliminado'})
             })  

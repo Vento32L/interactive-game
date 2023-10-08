@@ -12,11 +12,11 @@ var Models = {
         }
     },
 
-    getOneUser: (data, callback) => {
-        console.log("el id: ", data)
+    getOneUser: (userId, callback) => {
+        console.log("id: ", userId)
         if(connection){
-            let sql = `select *from user where user_id = ${connection.escape(data)}`
-            connection.query(sql, (error, rows) => {
+            let sql = `select *from user where user_id = ?`
+            connection.query(sql, [userId], (error, rows) => {
                 if(error) throw error
                 callback(rows)
             })
@@ -37,10 +37,10 @@ var Models = {
         }
     },
     
-    deleteUser: (data, callback) =>{
+    deleteUser: (userId, callback) =>{
         if(connection){
-            let sql = `delete from user where user_id = ${connection.escape(data)}`
-            connection.query(sql, (error, rows) =>{
+            let sql = `delete from user where user_id = ?`
+            connection.query(sql, [userId], (error, rows) =>{
                 if(error) throw error
                 callback({message: 'usuario eliminado'})
             })  

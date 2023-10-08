@@ -1,6 +1,5 @@
 const Models = require ('../models/user.model')
 
-const getOneUser_role =require ('../controllers/user_role.controller')
 
 function getUsers(req, res){
     Models.getUsers((data, error) => {
@@ -10,9 +9,13 @@ function getUsers(req, res){
 }
 
 function getOneUser(req, res){
-    console.log("user_id: ", req, params)
-    const { user_id } =req.params
-    Models.getOneUser(user_id, (data, error) =>{
+    console.log("id: ", req.params.user_id)
+    const userId =req.params.user_id
+    Models.getOneUser(userId, (data, error) =>{
+        if(error){
+            res.status(500).json({ error: 'Error al obtener el usuario' });
+            return;
+        }
         res.json(data)
     })
 }
@@ -26,9 +29,13 @@ function addUser(req, res){
 }
 
 function deleteUser(req, res){
-    console.log("user_id: ", req, params)
-    //const {user_id} = req.params
-    Models.deleteUser(user_id, (data, error) =>{
+    console.log("id: ", req.params.user_id)
+    const {userId} = req.params.user_id
+    Models.deleteUser(userId, (data, error) =>{
+        if (error) {
+            res.status(500).json({ error: 'Error al eliminar el usuario' });
+            return;
+          }
         res.json(data)
     })
 }
