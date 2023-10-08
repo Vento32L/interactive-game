@@ -1,6 +1,5 @@
 const Models = require ('../models/user.model')
-
-
+const jwt =require ('jsonwebtoken')
 function getUsers(req, res){
     Models.getUsers((data, error) => {
 
@@ -20,12 +19,35 @@ function getOneUser(req, res){
     })
 }
 
-function addUser(req, res){
+function registerUser(req, res){
     const {user_name, user_age, user_password, user_role_user_ro_id} = req.body
-    console.log(`user: ${user_name}, ${user_age}, ${user_password}, ${user_role_user_ro_id}`)
-    Models.addUser({user_name, user_age, user_password, user_role_user_ro_id}, (data, error) =>{
-        res.json(data)
-    })
+    //console.log(`user: ${user_name}, ${user_age}, ${user_password}, ${user_role_user_ro_id}`)
+    Models.addUser({user_name, user_age, user_password, user_role_user_ro_id}, 
+        (data, error) =>{
+            if (error) {
+                res.status(500).json({ error: 'Error al crear el usuario' });
+            }else{
+                res.json(data);
+            }
+        }
+    );
+}
+
+function loginUser(req, res) {
+    const { user_name, user_password } = req.body;
+
+    Models.findUserByUsernameAndPassword(user_name, user_password, (user, error) => {
+        if (error) {
+            res.status(401).json({ error: 'Error al crear el usuario' });
+        } else {
+            // Genera un token JWT para la autenticación
+            const token = jwt.sign({ user_id: user.user_id }, 'secreto', {
+                expiresIn: '1h', // Cambia la expiración según tus necesidades
+            });
+
+            res.json({ token });
+        }
+    });
 }
 
 function deleteUser(req, res){
@@ -43,7 +65,8 @@ function deleteUser(req, res){
 module.exports = {
     getUsers,
     getOneUser,
-    addUser,
+    registerUser,
+    loginUser,
     deleteUser
 
 }

@@ -1,8 +1,8 @@
-//import './App.css';
+/*//import './App.css';
 import React from 'react'
-import Login from './login'
+//import Login from './login'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import Signup from './signup'
+//import Signup from './signup'
 
 function App() {
   return (
@@ -18,46 +18,78 @@ function App() {
 }
 
 export default App;
-
-/*import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Register from './signup';
-import Login from './login';
-//import Game from './components/Game';
+*/
+// src/App.js
+import React, { useState } from 'react';
+import './App.css';
+import LoginForm from './components/LoginForm';
+import RegisterForm from './components/RegisterForm';
 
 function App() {
-  const [user, setUser] = useState(null);
+    const [loggedIn, setLoggedIn] = useState(false);
+    const [token, setToken] = useState('');
 
-  return (
-    <Router>
-      <div className="App">
-        <nav>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/signup">Register</Link></li>
-            <li><Link to="/login">Login</Link></li>
-            <li><Link to="/game">Game</Link></li>
-          </ul>
-        </nav>
-        <Routes>
-          <Route path="/signup" component={Register} />
-          <Route path="/login" component={Login} />
-        
-          <Route path="/" render={() => (
-            user ? (
-              <div>
-                <h2>Welcome, {user.username}!</h2>
-                <button onClick={() => setUser(null)}>Logout</button>
-              </div>
+    const handleLogin = async (formData) => {
+        // Realiza una solicitud de inicio de sesión al servidor
+        try {
+            const response = await fetch('/api/user/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                setLoggedIn(true);
+                setToken(data.token);
+            } else {
+                console.error('Error al iniciar sesión');
+            }
+        } catch (error) {
+            console.error('Error al iniciar sesión', error);
+        }
+    };
+
+    const handleRegister = async (formData) => {
+        // Realiza una solicitud de registro al servidor
+        try {
+            const response = await fetch('/api/user/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                console.log('Registro exitoso');
+            } else {
+                console.error('Error al registrar usuario');
+            }
+        } catch (error) {
+            console.error('Error al registrar usuario', error);
+        }
+    };
+
+    return (
+        <div className="App">
+            {loggedIn ? (
+                <div>
+                    <h1>Bienvenido</h1>
+                    <p>Tu token de autenticación: {token}</p>
+                </div>
             ) : (
-              <h2>Home</h2>
-            )
-          )} />
-        </Routes>
-      </div>
-    </Router>
-  );
+                <div>
+                    <LoginForm onLogin={handleLogin} />
+                    <RegisterForm onRegister={handleRegister} />
+                </div>
+            )}
+        </div>
+    );
 }
 
-export default App;*/
+export default App;
+
 
