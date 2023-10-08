@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import validation from'./loginValidation'
+import validation from'../loginValidation'
 
 function Login() {
     const [values, setValues] = useState({
