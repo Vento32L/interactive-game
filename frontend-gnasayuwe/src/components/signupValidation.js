@@ -6,7 +6,7 @@ function validation (values){
     if(values.user_name === ""){
         error.user_name = "Alias no debería estar vacía"
     }
-    else if(!user_name_pattern.test(values.alias)){
+    else if(!user_name_pattern.test(values.user_name)){
         error.user_name  = "Alias no coincide"
     }else {
         error.user_name = ""

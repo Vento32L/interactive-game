@@ -1,24 +1,24 @@
 function validation (values){
     let error = {}
-    const alias_pattern = /^[A-Za-z\s]+$/
-    const  password_pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/
+    const user_name_pattern = /^[A-Za-z\s]+$/
+    const  user_password_pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/
 
-    if(values.alias === ""){
-        error.alias = "Alias no debería estar vacía"
+    if(values.user_name === ""){
+        error.user_name = "Alias no debería estar vacía"
     }
-    else if(!alias_pattern.test(values.alias)){
-        error.alias  = "Alias no coincide"
+    else if(!user_name_pattern.test(values.user_name)){
+        error.user_name  = "Alias no coincide"
     }else {
-        error.alias = ""
+        error.user_name = ""
     }
 
-    if(values.password === ""){
-        error.password = "Contraseña no debería estar vacía"
+    if(values.user_password === ""){
+        error.user_password = "Contraseña no debería estar vacía"
     }
-    else if(!password_pattern.test(values.password)){
-        error.password = "Contraseña no coincide"
+    else if(!user_password_pattern.test(values.user_password)){
+        error.user_password = "Contraseña no coincide"
     }else {
-        error.password = ""
+        error.user_password = ""
     }
     return error;
 }
