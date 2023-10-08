@@ -15,7 +15,7 @@ function App() {
         <Route path='' element={isLoggedIn ? <Navigate to='/api/user/dashboard'/>: <LoginForm />}/>   
         <Route path='/register' element={<RegisterForm />}> </Route>
         <Route path='/api/user/dashboard' element={<Dashboard/>}></Route>
-        <Route path='/gamePage' element={<gamePage/>}></Route>
+        <Route path="/gamePage" element={<gamePage/>}></Route>
       </Routes>
     </BrowserRouter>
   )
