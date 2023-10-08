@@ -9,7 +9,7 @@ const Dashboard = () => {
     // Aquí debes hacer una solicitud al servidor para obtener los datos del usuario autenticado.
     const fetchUserData = async () => {
       try {
-        const response = await axios.get('/api/user'); // Reemplaza con la ruta correcta
+        const response = await axios.get('/api/user/dashboard'); // Reemplaza con la ruta correcta
         setUser(response.data);
       } catch (error) {
         console.error(error);

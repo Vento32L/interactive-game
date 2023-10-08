@@ -12,8 +12,8 @@ var Models = {
         }
     },
 
-    getOneGame_Type: (data, callback) => {
-        console.log("el id: ", data)
+    getOneGame_Type: (GametId, callback) => {
+        console.log("el id: ", GametId)
         if(connection){
             let sql = `select *from game_type where game_ty_id = ${connection.escape(data)}`
             connection.query(sql, (error, rows) => {
